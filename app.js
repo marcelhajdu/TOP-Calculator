@@ -25,3 +25,7 @@ function operate(a, b, operator) {
     return divide(a, b);
   }
 }
+
+let result = "random value";
+const display = document.querySelector(".display");
+display.innerHTML = result;
