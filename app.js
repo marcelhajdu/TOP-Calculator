@@ -1,8 +1,8 @@
 let num1 = "";
-let num2 = "";
 let result = 0;
 let func;
 
+const bZero = document.querySelector(".zero");
 const bOne = document.querySelector(".one");
 const bTwo = document.querySelector(".two");
 const bThree = document.querySelector(".three");
@@ -51,106 +51,109 @@ function operate(a, b, operator) {
   }
 }
 
+bZero.addEventListener("click", () => {
+  num1 += "0";
+});
+
 bOne.addEventListener("click", () => {
   num1 += "1";
-  console.log(num1);
 });
 
 bTwo.addEventListener("click", () => {
   num1 += "2";
-  console.log(num1);
 });
 
 bThree.addEventListener("click", () => {
-  if (num1 === undefined || num1 === 0) {
-    num1 = 3;
-  } else {
-    num2 = 3;
-    num1 = operate(num1, num2, func);
-  }
+  num1 += "3";
 });
 
 bFour.addEventListener("click", () => {
-  if (num1 === undefined || num1 === 0) {
-    num1 = 4;
-  } else {
-    num2 = 4;
-    num1 = operate(num1, num2, func);
-  }
+  num1 += "4";
 });
 
 bFive.addEventListener("click", () => {
-  if (num1 === undefined || num1 === 0) {
-    num1 = 5;
-  } else {
-    num2 = 5;
-    num1 = operate(num1, num2, func);
-  }
+  num1 += "5";
 });
 
 bSix.addEventListener("click", () => {
-  if (num1 === undefined || num1 === 0) {
-    num1 = 6;
-  } else {
-    num2 = 6;
-    num1 = operate(num1, num2, func);
-  }
+  num1 += "6";
 });
 
 bSeven.addEventListener("click", () => {
-  if (num1 === undefined || num1 === 0) {
-    num1 = 7;
-  } else {
-    num2 = 7;
-    num1 = operate(num1, num2, func);
-  }
+  num1 += "7";
 });
 
 bEight.addEventListener("click", () => {
-  if (num1 === undefined || num1 === 0) {
-    num1 = 8;
-  } else {
-    num2 = 8;
-    num1 = operate(num1, num2, func);
-  }
+  num1 += "8";
 });
 
 bNine.addEventListener("click", () => {
-  if (num1 === undefined || num1 === 0) {
-    num1 = 9;
-  } else {
-    num2 = 9;
-    num1 = operate(num1, num2, func);
-  }
+  num1 += "9";
 });
 
 bAdd.addEventListener("click", () => {
-  result = num1;
-  num1 = "";
   func = "+";
+  if (result === 0) {
+    result = parseInt(num1);
+    num1 = "";
+  } else {
+    num1 = parseInt(num1);
+    console.log(`result is ${result} num1 is ${num1} and func is ${func}`);
+    let equal = operate(result, num1, func);
+    display.innerHTML = equal;
+    result = equal;
+    num1 = "";
+    //func = "";
+  }
 });
 
 bSubtract.addEventListener("click", () => {
-  result = num1;
-  num1 = "";
   func = "-";
+  if (result === 0) {
+    result = parseInt(num1);
+    num1 = "";
+  } else {
+    num1 = parseInt(num1);
+    console.log(`result is ${result} num1 is ${num1} and func is ${func}`);
+    let equal = operate(result, num1, func);
+    display.innerHTML = equal;
+    result = equal;
+    num1 = "";
+  }
 });
 
 bMultiply.addEventListener("click", () => {
-  result = num1;
-  num1 = "";
   func = "*";
+  if (result === 0) {
+    result = parseInt(num1);
+    num1 = "";
+  } else {
+    num1 = parseInt(num1);
+    console.log(`result is ${result} num1 is ${num1} and func is ${func}`);
+    let equal = operate(result, num1, func);
+    display.innerHTML = equal;
+    result = equal;
+    num1 = "";
+  }
 });
 
 bDivide.addEventListener("click", () => {
-  result = num1;
-  num1 = "";
   func = "/";
+  if (result === 0) {
+    result = parseInt(num1);
+    num1 = "";
+  } else {
+    num1 = parseInt(num1);
+    console.log(`result is ${result} num1 is ${num1} and func is ${func}`);
+    let equal = operate(result, num1, func);
+    display.innerHTML = equal;
+    result = equal;
+    num1 = "";
+  }
 });
 
 bClear.addEventListener("click", () => {
   num1 = "";
-  num2 = "";
   func = "";
   result = 0;
   display.innerHTML = "Please write in your numbers";
@@ -161,6 +164,10 @@ bEquals.addEventListener("click", () => {
   num1 = parseInt(num1);
   let equal = operate(result, num1, func);
   display.innerHTML = equal;
+  result = equal;
+  func = "";
+  //if I want to do an another calculation after pressing the equal key, the num1-s value causing problems
+  num1 = "0";
 });
 
 const display = document.querySelector(".display");
