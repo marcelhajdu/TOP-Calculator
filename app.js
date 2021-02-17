@@ -1,5 +1,6 @@
-let num1;
-let num2;
+let num1 = "";
+let num2 = "";
+let result = 0;
 let func;
 
 const bOne = document.querySelector(".one");
@@ -51,25 +52,13 @@ function operate(a, b, operator) {
 }
 
 bOne.addEventListener("click", () => {
-  if (num1 === undefined || num1 === 0) {
-    num1 = 1;
-  } else {
-    num2 = 1;
-    num1 = operate(num1, num2, func);
-    console.log(num1);
-    //here comes the logic, that calculates the sum of the two numbers with the help of the operate function
-    //we save the sum to the num1 variable
-    //or we can make a separate function for this
-  }
+  num1 += "1";
+  console.log(num1);
 });
 
 bTwo.addEventListener("click", () => {
-  if (num1 === undefined || num1 === 0) {
-    num1 = 2;
-  } else {
-    num2 = 2;
-    num1 = operate(num1, num2, func);
-  }
+  num1 += "2";
+  console.log(num1);
 });
 
 bThree.addEventListener("click", () => {
@@ -136,36 +125,43 @@ bNine.addEventListener("click", () => {
 });
 
 bAdd.addEventListener("click", () => {
+  result = num1;
+  num1 = "";
   func = "+";
 });
 
 bSubtract.addEventListener("click", () => {
+  result = num1;
+  num1 = "";
   func = "-";
 });
 
 bMultiply.addEventListener("click", () => {
+  result = num1;
+  num1 = "";
   func = "*";
 });
 
 bDivide.addEventListener("click", () => {
+  result = num1;
+  num1 = "";
   func = "/";
 });
 
 bClear.addEventListener("click", () => {
-  num1 = 0;
-  num2 = 0;
+  num1 = "";
+  num2 = "";
   func = "";
+  result = 0;
   display.innerHTML = "Please write in your numbers";
-  console.log(num1);
-  console.log(num2);
-  console.log(func);
 });
 
 bEquals.addEventListener("click", () => {
-  display.innerHTML = num1;
+  result = parseInt(result);
+  num1 = parseInt(num1);
+  let equal = operate(result, num1, func);
+  display.innerHTML = equal;
 });
 
 const display = document.querySelector(".display");
-if (num1 === undefined) {
-  display.innerHTML = "Please write in your numbers";
-}
+display.innerHTML = "Please write in your numbers";
