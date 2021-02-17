@@ -51,7 +51,7 @@ function operate(a, b, operator) {
 }
 
 bOne.addEventListener("click", () => {
-  if (num1 === undefined) {
+  if (num1 === undefined || num1 === 0) {
     num1 = 1;
   } else {
     num2 = 1;
@@ -64,14 +64,74 @@ bOne.addEventListener("click", () => {
 });
 
 bTwo.addEventListener("click", () => {
-  if (num1 === undefined) {
+  if (num1 === undefined || num1 === 0) {
     num1 = 2;
   } else {
     num2 = 2;
     num1 = operate(num1, num2, func);
-    //here comes the logic, that calculates the sum of the two numbers with the help of the operate function
-    //we save the sum to the num1 variable
-    //or we can make a separate function for this
+  }
+});
+
+bThree.addEventListener("click", () => {
+  if (num1 === undefined || num1 === 0) {
+    num1 = 3;
+  } else {
+    num2 = 3;
+    num1 = operate(num1, num2, func);
+  }
+});
+
+bFour.addEventListener("click", () => {
+  if (num1 === undefined || num1 === 0) {
+    num1 = 4;
+  } else {
+    num2 = 4;
+    num1 = operate(num1, num2, func);
+  }
+});
+
+bFive.addEventListener("click", () => {
+  if (num1 === undefined || num1 === 0) {
+    num1 = 5;
+  } else {
+    num2 = 5;
+    num1 = operate(num1, num2, func);
+  }
+});
+
+bSix.addEventListener("click", () => {
+  if (num1 === undefined || num1 === 0) {
+    num1 = 6;
+  } else {
+    num2 = 6;
+    num1 = operate(num1, num2, func);
+  }
+});
+
+bSeven.addEventListener("click", () => {
+  if (num1 === undefined || num1 === 0) {
+    num1 = 7;
+  } else {
+    num2 = 7;
+    num1 = operate(num1, num2, func);
+  }
+});
+
+bEight.addEventListener("click", () => {
+  if (num1 === undefined || num1 === 0) {
+    num1 = 8;
+  } else {
+    num2 = 8;
+    num1 = operate(num1, num2, func);
+  }
+});
+
+bNine.addEventListener("click", () => {
+  if (num1 === undefined || num1 === 0) {
+    num1 = 9;
+  } else {
+    num2 = 9;
+    num1 = operate(num1, num2, func);
   }
 });
 
@@ -96,6 +156,9 @@ bClear.addEventListener("click", () => {
   num2 = 0;
   func = "";
   display.innerHTML = "Please write in your numbers";
+  console.log(num1);
+  console.log(num2);
+  console.log(func);
 });
 
 bEquals.addEventListener("click", () => {
