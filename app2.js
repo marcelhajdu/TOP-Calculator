@@ -1,6 +1,5 @@
 let num = "";
 let result = 0;
-let func;
 
 const bZero = document.querySelector(".zero");
 const bOne = document.querySelector(".one");
@@ -52,66 +51,57 @@ function operate(a, b, operator) {
 }
 
 bZero.addEventListener("click", () => {
-  num1 += "0";
+  num += "0";
 });
 
 bOne.addEventListener("click", () => {
-  num1 += "1";
+  num += "1";
 });
 
 bTwo.addEventListener("click", () => {
-  num1 += "2";
+  num += "2";
 });
 
 bThree.addEventListener("click", () => {
-  num1 += "3";
+  num += "3";
 });
 
 bFour.addEventListener("click", () => {
-  num1 += "4";
+  num += "4";
 });
 
 bFive.addEventListener("click", () => {
-  num1 += "5";
+  num += "5";
 });
 
 bSix.addEventListener("click", () => {
-  num1 += "6";
+  num += "6";
 });
 
 bSeven.addEventListener("click", () => {
-  num1 += "7";
+  num += "7";
 });
 
 bEight.addEventListener("click", () => {
-  num1 += "8";
+  num += "8";
 });
 
 bNine.addEventListener("click", () => {
-  num1 += "9";
+  num += "9";
 });
 
+//kigyujteni a logikát egy helyre?
+//csak globális változókkal dolgozni, és az osszes event listener egy metódust hívogat
+//a metódus pedig atttól fuggoen hogy mennyi paramétere van definiálva, ad vissza választ
+
+//ha mind2 számnak van értéke, akkor kiszámolom a resultot és megjelenítem az ablakban
+//ha nincs
+//akkor ha a result nulla, akkor a num1 lesz a result
+
+//
+
 bAdd.addEventListener("click", () => {
-  func = "+";
-  if (num1 !== "" && result !== 0) {
-    let equal = operate(result, num1, func);
-    display.innerHTML = equal;
-    result = equal;
-    num1 = "";
-  } else {
-    if (result === 0) {
-      result = parseInt(num1);
-      num1 = "";
-    } else {
-      num1 = parseInt(num1);
-      console.log(`result is ${result} num1 is ${num1} and func is ${func}`);
-      let equal = operate(result, num1, func);
-      display.innerHTML = equal;
-      result = equal;
-      num1 = "";
-      //func = "";
-    }
-  }
+  operate(result, num, "+");
 });
 
 bSubtract.addEventListener("click", () => {
