@@ -1,4 +1,4 @@
-let num1 = "";
+let num = "";
 let result = 0;
 let func;
 
