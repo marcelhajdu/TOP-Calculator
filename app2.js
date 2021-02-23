@@ -90,6 +90,12 @@ bNine.addEventListener("click", () => {
   num += "9";
 });
 
+//eloszor megírni a logikát, és tesztelni, hogy consol-ban mukodik-e
+//aztán bekotni az UI-t
+
+//leírni a logikát hogy mi hogyan mukodik a kalkulátornál, ami a netes példában van
+//pl mit csinál a program, ha az equals után matematikai muveletet nyomok? stb...
+
 //kigyujteni a logikát egy helyre?
 //csak globális változókkal dolgozni, és az osszes event listener egy metódust hívogat
 //a metódus pedig atttól fuggoen hogy mennyi paramétere van definiálva, ad vissza választ
